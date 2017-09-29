@@ -50,11 +50,14 @@ public class ObjectServiceImpl implements ObjectService{
 	}
 	
 	@Override
-	public Map<String, Object> headAdd(String tablename, Map<String, Object> beanmap) {
-		
-		
-		
-		return add(tablename, beanmap);
+	public Map<String, Object> headAdd(Map<String, Object> beanmap) {
+		//TODO
+		//插入 s_object_table
+	    this.add(oritable,beanmap);
+		//插入 s_object_column_table
+		   
+		//建表    create table
+		return beanmap;
 	}
 
 	@Override

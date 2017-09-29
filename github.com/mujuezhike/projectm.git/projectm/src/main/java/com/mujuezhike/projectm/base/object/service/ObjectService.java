@@ -9,7 +9,7 @@ public interface ObjectService{
 	
 	public Map<String,Object> headByTableId(String tableid);
 	
-	public Map<String,Object> headAdd(String tablename, Map<String, Object> beanmap);
+	public Map<String,Object> headAdd(Map<String, Object> beanmap);
 	
 	public Map<String,Object> getOri(String tablename,String id);
 	

@@ -55,14 +55,10 @@ public class ObjectController {
 	   public String headadd( HttpServletRequest request
 			              	 ,HttpServletResponse response
 			              	 ,@RequestBody Map<String,Object> map){
-		   //TODO
-		   //插入 s_object_table
-		   objectService.add(oritable, map);
-		   //插入 s_object_column_table
-		   
-		   //建表    create table
-		   
-		   return "ok";
+
+		   objectService.headAdd(map);
+
+		   return JSON.toJSONString(map);
 	   }
 	
 	    /** 获取列表信息 **/
