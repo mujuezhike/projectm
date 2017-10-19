@@ -28,8 +28,8 @@ public class ObjectController {
 	   @Autowired
 	   private ObjectService objectService;
 	   
-		private static final String oritable = "s_object_table";
-		private static final String oricolumn = "s_object_table_column";
+	   //private static final String ORITABLE = "s_object_table";
+	   //private static final String ORICOLUMN = "s_object_table_column";
 	
 	   /** 获取表元信息  **/
 	   @RequestMapping(value = "/o/h/{TABLENAME&TABLEID}")
@@ -38,8 +38,10 @@ public class ObjectController {
 			 			  ,@PathVariable("TABLENAME&TABLEID") String tableIdOrtableName){
 		   Map<String,Object> map = null;
 		   if(StringUtil.isNumeric(tableIdOrtableName)) {
+			   /** TABLEID **/
 			   map = objectService.headByTableId(tableIdOrtableName);
 		   }else {
+			   /** TABLENAME **/
 			   map = objectService.head(tableIdOrtableName);
 		   }
 		   
@@ -159,6 +161,7 @@ public class ObjectController {
 	    public String add(     HttpServletRequest request
 	            		      ,HttpServletResponse response
 	    		              ,@PathVariable("TABLENAME") String tableName){
+			//TODO
 	        return "ok"+tableName;
 	    }
 

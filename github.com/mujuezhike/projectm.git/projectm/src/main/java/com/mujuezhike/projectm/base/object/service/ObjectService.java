@@ -5,26 +5,38 @@ import java.util.Map;
 
 public interface ObjectService{
 	
-	public Map<String,Object> head(String tablename);
+	Map<String,Object> head(String tablename);
 	
-	public Map<String,Object> headByTableId(String tableid);
+	Map<String,Object> headByTableId(String tableid);
 	
-	public Map<String,Object> headAdd(Map<String, Object> beanmap);
+	Map<String,Object> headAdd(Map<String, Object> beanmap);
 	
-	public Map<String,Object> getOri(String tablename,String id);
+	//@单层数据
+	Map<String,Object> getOri(String tablename,String id);
 	
-	public Map<String,Object> get(String tablename,String id);
+	//@双层数据
+	Map<String,Object> get(String tablename,String id);
 	
-	public Map<String,Object> getAddtion(Map<String,Object> map,Map<String,Object> headmap);
+	/**
+	 *  @20171019 
+	 *  describe : 获取数据的关联信息   (单层 => 双层)
+	 *  param    : map     对象的数据
+	 *             headmap 对象的结构
+	 *         
+	 *  return   : 读取关联数据  并改动对象map 返回map 
+	 */
+	Map<String,Object> getAddtion(Map<String,Object> map,Map<String,Object> headmap);
 	
-	public Map<String,Object> getByTableId(String tableid,String id);
+	Map<String,Object> getByTableId(String tableid,String id);
 	
-	public List<Map<String,Object>> listOri(String tablename,Map<String,Object> beanmap);
+	//@单层数据
+	List<Map<String,Object>> listOri(String tablename,Map<String,Object> beanmap);
 	
-	public List<Map<String,Object>> list(String tablename,Map<String,Object> beanmap);
+	//@双层数据
+	List<Map<String,Object>> list(String tablename,Map<String,Object> beanmap);
 	
-	public Map<String,Object> add(String tablename,Map<String,Object> beanmap);
+	Map<String,Object> add(String tablename,Map<String,Object> beanmap);
 	
-	public List<Map<String,Object>> addlist(String tablename,List<Map<String,Object>> beanmaplist);
+    List<Map<String,Object>> addlist(String tablename,List<Map<String,Object>> beanmaplist);
 
 }

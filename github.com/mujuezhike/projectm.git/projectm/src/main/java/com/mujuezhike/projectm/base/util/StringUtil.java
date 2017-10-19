@@ -1,8 +1,13 @@
 package com.mujuezhike.projectm.base.util;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import com.alibaba.fastjson.JSON;
 
 public class StringUtil {
 	
@@ -87,6 +92,22 @@ public class StringUtil {
 		System.out.println(isNumeric("33.232"));
 		System.out.println(isNumeric("-33.232"));
 		System.out.println(isNumeric("-33.2321ss32"));
+		
+		Map<String,Object> map = new HashMap<String,Object>();
+		List<Object> list =new ArrayList<Object>();
+		list.add("sadass");
+		list.add("12121");
+		list.add(null);
+		list.add("12123");
+		list.add("12124");
+		map.put("list", list);
+		
+		String ss = JSON.toJSONString(map);
+		map = (Map<String,Object>)JSON.parse(ss);
+		
+		List<Object> ee = (List<Object>)map.get("list");
+		System.out.println(ee.get(1));
+		
 		
 	}
 
